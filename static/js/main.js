@@ -1,1 +1,1 @@
-let deck = ["Attack", "Attack", ];
+let deck = ["Attack", "Attack", "Attack", "Defend", "Defend", "Debuff", "Buff"];
