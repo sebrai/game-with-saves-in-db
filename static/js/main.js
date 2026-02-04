@@ -45,7 +45,7 @@ if (cardName == "Attack") {
     console.log("You played an Attack card!");
 }
 }
-function hit(dmg = 5){
+function gethit(dmg = 5){
     let hp = Number(document.getElementById("hp").value)
     hp-= dmg
     document.getElementById("hp").value = hp
@@ -53,4 +53,9 @@ function hit(dmg = 5){
 }
 console.log("hello world")  
 
-
+function hit_e(dmg){
+     let hp = Number(document.getElementById("e_hp").value)
+    hp-= dmg
+    document.getElementById("e_hp").value = hp
+    console.log(hp)
+}
