@@ -81,6 +81,8 @@ def home():
 
 @app.route("/play/<int:id>")
 def play(id):
+    if  not session.get("brukernavn") or not session.get("id"):
+        return redirect(url_for("login"))
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM runs where id = %s",(id,))
@@ -114,7 +116,7 @@ def logout():
 
 @app.route("/")
 def base():
-    return "hello"
+    return redirect(url_for('login'))
 
 if __name__ == "__main__":
     app.run(debug=True)
