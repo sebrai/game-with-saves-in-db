@@ -10,3 +10,11 @@ border-width: 2vh;
 border-color: black;
 border-style: solid;
 }
+form{
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 103px;
+    align-items: end;
+    justify-content: end;
+}

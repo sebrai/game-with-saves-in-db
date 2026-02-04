@@ -45,7 +45,12 @@ if (cardName == "Attack") {
     console.log("You played an Attack card!");
 }
 }
-
+function hit(dmg = 5){
+    let hp = Number(document.getElementById("hp").value)
+    hp-= dmg
+    document.getElementById("hp").value = hp
+    console.log(hp)
+}
 console.log("hello world")  
 
 

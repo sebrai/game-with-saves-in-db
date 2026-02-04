@@ -9,7 +9,13 @@
 <body>
  <h1>run: {{game['id']}}</h1>
  <div id="test" class="test">
-
+<form method="post">
+    <input type="number" name="hp" value="{{game['hp']}}" hidden id="hp">
+    <input type="number" name="e_hp" value="{{game['e_hp']}}" hidden id="e_hp">
+    <input type="submit" value="save progress">
+   
+</form>
+ <a href="{{url_for('home')}}"><button>exit</button></a>
 <script src="{{url_for('static',filename = 'js/main.js')}}"></script>
 
 </body>

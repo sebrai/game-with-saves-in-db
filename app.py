@@ -79,12 +79,20 @@ def home():
 
     return  render_template("homepage.html",name = session["brukernavn"], runs = runs)
 
-@app.route("/play/<int:id>")
+@app.route("/play/<int:id>",methods= ['GET','POST'])
 def play(id):
     if  not session.get("brukernavn") or not session.get("id"):
         return redirect(url_for("login"))
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
+    if request.method == 'POST':
+        hp = int(request.form['hp'])
+        e_hp = int(request.form['e_hp'])
+        print("POST hp:", hp, "POST e_hp:", e_hp)
+
+        cursor.execute('UPDATE runs SET hp = %s , e_hp = %s WHERE id = %s',(hp,e_hp,id))
+        conn.commit()
+  
     cursor.execute("SELECT * FROM runs where id = %s",(id,))
     game = cursor.fetchone()
     cursor.close()
