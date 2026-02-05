@@ -12,12 +12,14 @@
     runner: {{name}}
     hp:{{item['hp']}}
     enemey hp: {{item['e_hp']}}
+    done: {% if item['done'] %} yes {% else %} no {% endif %}
+
     <a href="{{url_for('play', id = item['id'])}}"><button>start game:{{loop.index}}</button></a>
    </div>
   
      {% endfor %}
      {%if not runs[0]%}
-    hi
+    <h1>there are no runs for you to play</h1>
      {% endif%}
     <a href="{{url_for('new')}}"><button>new game</button></a>
      <a href="{{url_for('logout')}}"><button>log out</button></a>

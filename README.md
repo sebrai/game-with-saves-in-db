@@ -1,6 +1,6 @@
 # Prosjektbeskrivelse – IT-utviklingsprosjekt (2IMI)
 
-##  game saves
+##  game saves projekt
 **game saves**
 
 ---
@@ -23,35 +23,34 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 
 ---
 
-## 2. Funksjonelle krav
+## 2. Funksjoner
 
-Systemet skal minst ha følgende funksjoner:
+### systemet kan gjøre det følgende
 
-1. Funksjon 1  
-2. Funksjon 2  
-3. Funksjon 3  
-4. Funksjon 4  
-5. Funksjon 5  
+1. *lar deg logge in*
+2. *logge ut*
+3. *se alle runns som du har startet*
+4. *lar deg spille alle sammen*
+5. *kan lagre progresjonen din i databasen*
 
-*(Legg til flere hvis nødvendig)*
+
 
 ---
 
 ## 3. Teknologivalg
 
 ### Programmeringsspråk
-- Eksempel: Python / JavaScript 
+ Python / JavaScript 
 
 ### Rammeverk / Plattform / Spillmotor
-- Eksempel: Flask 
+ Flask 
 
 ### Database
 - MariaDB
 
 ### Verktøy
 - GitHub
-- GitHub Projects (Kanban)
-- Eventuelle andre verktøy
+- vscode live share
 
 ---
 

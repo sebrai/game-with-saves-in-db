@@ -9,6 +9,10 @@
 <body>
  <h1>run: {{game['id']}}</h1>
  <div id="test" class="test">
+    
+</div>
+<img id="card-back" class="card-back" src="{{url_for('static', filename = 'img/card.png')}}" alt="card">
+
 <form method="post">
     <input type="number" name="hp" value="{{game['hp']}}" hidden id="hp">
     <input type="number" name="e_hp" value="{{game['e_hp']}}" hidden id="e_hp">

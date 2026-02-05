@@ -88,7 +88,7 @@ def play(id):
     if request.method == 'POST':
         hp = int(request.form['hp'])
         e_hp = int(request.form['e_hp'])
-        print("POST hp:", hp, "POST e_hp:", e_hp)
+        print("POST hp:", hp, "POST e_hp:", e_hp,"id: ",id)
 
         cursor.execute('UPDATE runs SET hp = %s , e_hp = %s WHERE id = %s',(hp,e_hp,id))
         conn.commit()

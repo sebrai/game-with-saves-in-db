@@ -6,9 +6,18 @@ body{
 height: 35vh;
 width: 25vh;
 border-radius:5%;
-border-width: 2vh;
+border-width: 1vh;
 border-color: black;
 border-style: solid;
+position:absolute;
+top: 50%;
+visibility: hidden;
+}
+.card-back {
+height: 35vh;
+width: 25vh;
+position:absolute;
+top: 50%;
 }
 form{
     position: fixed;
