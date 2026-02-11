@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404:page not found</title>
+     <link rel="shortcut icon" href="{{url_for('static',filename = 'img/card.png')}}" type="image/x-icon">
+</head>
+<style>
+    .cont {
+        margin: 0 auto;
+        width: 70%;
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <div class="cont">
+        <img src="{{url_for('static',filename='img/404.png')}}" alt="404 page not found" style="width: 600px;">
+        <h2>the path <b>"{{request.path}}"</b> does not exist<br> were you searching for one of theese? </h2>
+        {% if not sesh.get("brukernavn") or not sesh.get("id") %}
+        <a href="{{url_for('login')}}"> login</a> <br>
+        <a href="{{url_for('reg')}}">register a new user</a> <br>
+        <h4>or</h4>
+        {% elif sesh.get('brukernavn') and sesh.get('id') %}
+        <a href="{{url_for('home')}}">home page</a> <br>
+        <h4>or</h4>
+        {% else %}
+        <h4>something is wery wrong with your session please logout: <br></h4>
+        {% endif %}
+        <a href="{{url_for('logout')}}">logout</a>
+    </div>
+
+</body>
+
+</html>

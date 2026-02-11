@@ -6,8 +6,8 @@
 ---
 
 ## Deltakere
-- sebastian – backend/database
-- oskar – game programer
+- Sebastian – backend/database
+- Oscar – game programer
  
 
 ---
@@ -15,7 +15,7 @@
 ## 1. Prosjektidé og problemstilling
 
 ### Beskrivelse
-vi lager et spill der progresjonen din blir lagret i en db
+vi lager et spill der progresjonen din blir lagret i en db, det er inspirert av Slay the Spire
 
 
 ### Målgruppe
@@ -32,6 +32,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 3. *se alle runns som du har startet*
 4. *lar deg spille alle sammen*
 5. *kan lagre progresjonen din i databasen*
+6. *en 404 side som viser deg linker til det du kan trenge*
 
 
 
@@ -40,7 +41,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 ## 3. Teknologivalg
 
 ### Programmeringsspråk
- Python / JavaScript 
+ Python / JavaScript / HTML / CSS
 
 ### Rammeverk / Plattform / Spillmotor
  Flask 
@@ -50,7 +51,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 
 ### Verktøy
 - GitHub
-- vscode live share
+- VSCode live share
 
 ---
 

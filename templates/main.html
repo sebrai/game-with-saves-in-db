@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{{url_for('static', filename ='css/main.css')}}">
-<title>The game</title>
-</head>
-<body>
- <h1>run: {{game['id']}}</h1>
- <div id="test" class="test">
-    
-</div>
-<img id="card-back" class="card-back" src="{{url_for('static', filename = 'img/card.png')}}" alt="card">
 
-<form method="post">
-    <input type="number" name="hp" value="{{game['hp']}}" hidden id="hp">
-    <input type="number" name="e_hp" value="{{game['e_hp']}}" hidden id="e_hp">
-    <input type="submit" value="save progress">
-   
-</form>
- <a href="{{url_for('home')}}"><button>exit</button></a>
-<script src="{{url_for('static',filename = 'js/main.js')}}"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/main.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static',filename = 'img/card.png')}}" type="image/x-icon">
+    <title>The game</title>
+</head>
+
+<body>
+    <h1>run: {{game['id']}}</h1>
+    <div id="test" class="test">
+
+    </div>
+    <img id="card-back" class="card-back" src="{{url_for('static', filename = 'img/card.png')}}" alt="card">
+
+    <form method="post">
+        <input type="number" name="hp" value="{{game['hp']}}" hidden id="hp">
+        <input type="number" name="e_hp" value="{{game['e_hp']}}" hidden id="e_hp">
+        <input type="submit" value="save progress">
+
+    </form>
+    <a href="{{url_for('home')}}"><button>exit</button></a>
+    <img src="{{url_for('static', filename = 'img/funny_test.jpg')}}" alt="player" id="player">
+    <img src="{{url_for('static', filename = 'img/pixgoblin.png')}}" alt="enemy" id="enemy">
+    <button id="draw-button" onclick="drawCards(5)">draw card</button>
+    <script src="{{url_for('static',filename = 'js/main.js')}}"></script>
 
 </body>
+
 </html>

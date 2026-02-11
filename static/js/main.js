@@ -14,29 +14,45 @@ return array;
 }
 
 function initializeGame() {
-drawPile = shuffle([deck]);
+drawPile = shuffle([...deck]);
 hand = [];
 discardPile = [];
 drawCards(HAND_SIZE);
 }
 
-function drawCards(num) {
-for (let i = 0; i < num; i++) {
+function drawCards(num) { // draws cards based on the number when called
+for (let i = 0; i < num; i++) { //loop where as long as i < the inputted number, it will keep drawing cards until it reaches the number or the max hand size
 if (drawPile.length === 0) {
     reshuffleDiscardIntoDraw();
 }
-if (drawPile.length > 0) {
-    if (hand.length < HAND_SIZE)
-        hand.push(drawPile.pop());
-    else {
-        console.log("Hand is full!");
-        return;}
+if (drawPile.length === 0) {
+    console.log("No cards left to draw!");
+    return;
+}
+if (hand.length < HAND_SIZE) {
+    hand.push(drawPile.pop());
+    animateDrawCard(hand.length - 1);
+} else {
+    console.log("Hand is full!");
+    return;
 }
 }
 }
 
+function animateDrawCard(slotIndex) {
+    const template = document.getElementById("test");
+    const card = template.cloneNode(true);
+
+    card.removeAttribute("id");          // avoid duplicate IDs
+    card.classList.add("draw-animation");
+    const spacing = 15; // vw per card
+    card.style.setProperty( "--draw-distance", `${(slotIndex + 1) * spacing}vw`
+    );
+card.style.animationDelay = `${slotIndex * 200}ms`;
+    document.body.appendChild(card);
+}
 function reshuffleDiscardIntoDraw() {
-drawPile = shuffle([discardPile])
+drawPile = shuffle([...discardPile])
 discardPile = [];
 }
 
@@ -54,8 +70,9 @@ function gethit(dmg = 5){
 console.log("hello world")  
 
 function hit_e(dmg){
-     let hp = Number(document.getElementById("e_hp").value)
+    let hp = Number(document.getElementById("e_hp").value)
     hp-= dmg
     document.getElementById("e_hp").value = hp
     console.log(hp)
 }
+initializeGame();

@@ -126,5 +126,9 @@ def logout():
 def base():
     return redirect(url_for('login'))
 
+@app.errorhandler(404)
+def  eror404(e):
+   return render_template("404.html",sesh = session)
+
 if __name__ == "__main__":
     app.run(debug=True)
