@@ -26,7 +26,8 @@
         <input type="submit" value="save and quit" id="save">
 
     </form>
-  
+     <h1 id="display_hp" style="position: fixed;top: 5%; left:25%;"> {{game['hp']}} </h1>
+     <h1 id="display_e_hp" style="position: fixed;top: 10%; right:25%;"> {{game['e_hp']}} </h1>
     <img src="{{url_for('static', filename = 'img/funny_test.jpg')}}" alt="player" id="player">
     <img src="{{url_for('static', filename = 'img/pixgoblin.png')}}" alt="enemy" id="enemy">
     <button id="draw-button" onclick="drawCards(5)">draw cards</button>

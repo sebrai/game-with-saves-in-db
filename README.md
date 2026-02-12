@@ -67,7 +67,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 - Navn: *runs*
 - Beskrivelse: *holder info om hver spill som har blitt startet*
 
-*(Minst 2–4 tabeller)*
+
 
 ### Eksempel på tabellstruktur
 

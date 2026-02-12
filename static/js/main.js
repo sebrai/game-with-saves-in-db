@@ -63,6 +63,8 @@ function animateDrawCard(slotIndex,type) {
     card.addEventListener("click",()=>{
         console.log(type)
         playCard(type)
+        let e_dmg = Math.floor(Math.random()*15)
+        gethit(e_dmg)
     })
     card.appendChild(icon) // creates image, puts the icon in the template copy, and then decides which icon to use depending on the card type
     icon.src = "/static/img/icons/"+ type +".png" // add style
@@ -86,6 +88,7 @@ function gethit(dmg = 5){
     hp-= dmg // remove dmg
     document.getElementById("hp").value = hp // set value back into form
     console.log("player hp is: " + hp) //log for clarity
+    document.getElementById("display_hp").textContent = hp
     if (hp<=0) {
        lose()
         
@@ -98,6 +101,7 @@ function hit_e(dmg){
     hp-= dmg
     document.getElementById("e_hp").value = hp
     console.log("enemy hp is: " + hp)
+    document.getElementById("display_e_hp").textContent = hp
     if (hp<=0) {
        win()
         
@@ -107,7 +111,7 @@ function hit_e(dmg){
 function lose(){
      document.getElementById("done").value = 1 // marks game as complete
     let screen = document.getElementById("fadeOverlay")
-    screen.style.pointerEvents = ""
+    screen.style.pointerEvents = "auto"
     screen.style.opacity = 100+"%"
     let s_btn = document.createElement("button")
     s_btn.addEventListener("click",()=>{
@@ -122,6 +126,7 @@ function lose(){
 function win() {
      document.getElementById("done").value = 1 // marks game as complete
     let screen = document.getElementById("fadeOverlay")
+    screen.style.pointerEvents = "auto"
     screen.style.opacity = 100+"%"
     let s_btn = document.createElement("button")
     s_btn.addEventListener("click",()=>{
