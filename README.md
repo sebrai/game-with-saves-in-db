@@ -74,6 +74,14 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 
 **users:**
 
+#### contents
+
+- id
+- username
+- user email
+- users password (hashed)
+
+
 ``` sql
 +-------+--------------+------+-----+---------+----------------+
 | Field | Type         | Null | Key | Default | Extra          |
@@ -89,6 +97,15 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 
 
 **runs:**
+
+#### contents
+
+- id
+- your hp
+- enemy hp
+- current players id (foreign key)
+- if the run is complete
+
 ```sql
 +---------+------------+------+-----+---------+----------------+
 | Field   | Type       | Null | Key | Default | Extra          |
@@ -99,4 +116,32 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 | user_id | int(11)    | YES  | MUL | NULL    |                |
 | done    | tinyint(1) | YES  |     | 0       |                |
 +---------+------------+------+-----+---------+----------------+
+```
+
+## 5. fill structur
+
+```
+└── 📁game-with-saves-in-db
+    └── 📁.venv
+    └── 📁static
+        ├── 📁css
+             └── main.css
+        ├── 📁img
+            ├── 404.png
+            ├── card.png
+            ├── funny_test.jpg
+            └── pixgoblin.png
+        └── 📁js
+            └── main.js
+    └── 📁templates
+        ├── 404.html
+        ├── homepage.html
+        ├── login.html
+        ├── main.html
+        └── registrer.html
+    ├── .env
+    ├── .gitignore
+    ├── app.py
+    ├── README.md
+    └── requirements.txt
 ```

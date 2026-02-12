@@ -10,6 +10,9 @@
 </head>
 
 <body>
+<div id="fadeOverlay"></div>
+
+
     <h1>run: {{game['id']}}</h1>
     <div id="test" class="test">
 
@@ -19,13 +22,14 @@
     <form method="post">
         <input type="number" name="hp" value="{{game['hp']}}" hidden id="hp">
         <input type="number" name="e_hp" value="{{game['e_hp']}}" hidden id="e_hp">
-        <input type="submit" value="save progress">
+        <input type="hidden" name="done" id="done" value="{{ game['done'] }}">
+        <input type="submit" value="save and quit" id="save">
 
     </form>
-    <a href="{{url_for('home')}}"><button>exit</button></a>
+  
     <img src="{{url_for('static', filename = 'img/funny_test.jpg')}}" alt="player" id="player">
     <img src="{{url_for('static', filename = 'img/pixgoblin.png')}}" alt="enemy" id="enemy">
-    <button id="draw-button" onclick="drawCards(5)">draw card</button>
+    <button id="draw-button" onclick="drawCards(5)">draw cards</button>
     <script src="{{url_for('static',filename = 'js/main.js')}}"></script>
 
 </body>

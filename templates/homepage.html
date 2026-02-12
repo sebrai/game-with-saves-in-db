@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main page</title>
+    <title>home page: {{name}}</title>
      <link rel="shortcut icon" href="{{url_for('static',filename = 'img/card.png')}}" type="image/x-icon">
 </head>
 <body>
      <h1>hello {{name}}</h1>
      {% for item in runs%}
-   <div style="background-color: aqua; padding: 20px;margin: 20px; width: 40vw;">
-    runner: {{name}}
-    hp:{{item['hp']}}
-    enemey hp: {{item['e_hp']}}
-    done: {% if item['done'] %} yes {% else %} no {% endif %}
+   <div style="padding: 20px;margin: 20px; width: 40vw; border: solid black 5px; border-radius: 25px;">
+   <h1>runner: {{name}}</h1> 
+     <p>hp:{{item['hp']}}</p>
+    <p>enemey hp: {{item['e_hp']}}</p>
+    <p>done: {% if item['done'] %} yes {% else %} no {% endif %}</p>
 
-    <a href="{{url_for('play', id = item['id'])}}"><button>start game:{{loop.index}}</button></a>
+    <a href="{{url_for('play', id = item['id'])}}"><button>start game:{{item['id']}}</button></a>
    </div>
   
      {% endfor %}

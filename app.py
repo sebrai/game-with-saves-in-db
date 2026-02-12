@@ -72,7 +72,7 @@ def home():
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT id, name FROM users WHERE name = %s",(session['brukernavn'],))
     active = cursor.fetchone()
-    cursor.execute("SELECT * FROM runs  WHERE  user_id = %s", (active["id"],))
+    cursor.execute("SELECT * FROM runs  WHERE  user_id = %s ORDER BY done ASC, id ASC", (active["id"],))
     runs = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -88,10 +88,13 @@ def play(id):
     if request.method == 'POST':
         hp = int(request.form['hp'])
         e_hp = int(request.form['e_hp'])
+        done = bool(int(request.form.get('done',0)))
         print("POST hp:", hp, "POST e_hp:", e_hp,"id: ",id)
-
-        cursor.execute('UPDATE runs SET hp = %s , e_hp = %s WHERE id = %s',(hp,e_hp,id))
+        cursor.execute('UPDATE runs SET hp = %s , e_hp = %s, done = %s WHERE id = %s',(hp,e_hp,done,id))
         conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect(url_for('home'))
   
     cursor.execute("SELECT * FROM runs where id = %s",(id,))
     game = cursor.fetchone()
