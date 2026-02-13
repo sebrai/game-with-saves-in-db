@@ -6,10 +6,9 @@
 ---
 
 ## Deltakere
-- Sebastian – backend/database
-- Oscar – game programmer
+- Sebastian – backend/database - 2IMI
+- Oscar – game programmer - 2IMI
  
-
 ---
 
 ## 1. Prosjektidé og problemstilling
@@ -52,7 +51,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 ### Verktøy
 - GitHub
 - VSCode live share
-- GitHub Projects (kanban board)
+- GitHub Projects (kanban board): [link](https://github.com/users/sebrai/projects/5)
 ---
 
 ## 4. Datamodell
