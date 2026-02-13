@@ -60,7 +60,7 @@ def login():
            
             return redirect(url_for("home")) # REDIRECTS YOU TO the home page
         else:
-            return render_template("login.html", feil_melding="Ugyldig brukernavn eller passord")
+            return render_template("login.html", feil_melding="Incorrect username or password")
 
     return render_template("login.html")
 
