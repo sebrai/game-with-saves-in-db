@@ -7,7 +7,7 @@
 
 ## Deltakere
 - Sebastian – backend/database
-- Oscar – game programer
+- Oscar – game programmer
  
 
 ---
@@ -52,7 +52,7 @@ er laget for de som har lyst til og spille et lite spill og ha det gåy mer enn 
 ### Verktøy
 - GitHub
 - VSCode live share
-
+- GitHub Projects (kanban board)
 ---
 
 ## 4. Datamodell
